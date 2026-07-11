@@ -1,0 +1,166 @@
+﻿/*Body*/
+body {
+    margin: 0;
+    padding: 0;
+    /* blue and purple background for neon look */
+    background: linear-gradient(90deg, #00122a 50%, #20002a 50%);
+    color: white;
+    font-family: 'Courier New', Courier, monospace; /* Retro font*/
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+    margin-top: 40px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00f3ff;
+    text-shadow: 0 0 5px #00f3ff;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Background look for each section */
+section {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark box to give it neon look */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* navigation */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style-type: none;
+    padding: 0;
+}
+
+/* links in navigation menu */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+
+    /* makes the links glow purple when hovered */
+    nav a:hover, nav a:focus {
+        color: #ff00ff; 
+        text-shadow: 0 0 10px #ff00ff;
+        outline: none; 
+    }
+
+/* Roster Grid Layout */
+.roster-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line when 4 are present */
+    justify-content: center;
+    gap: 20px;
+}
+
+/* character cards */
+.char-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 3px solid #555;
+    border-radius: 8px;
+    width: 160px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; 
+}
+
+    /* Zoomed-in Face Sprite */
+    .char-card img {
+        width: 150px;
+        height: 150px;
+        image-rendering: pixelated;
+        transform: scale(2.2); /* Zooms in to focus on face */
+        transform-origin: center 40%;
+    }
+
+    /* deals with hover for cards */
+    .char-card:hover, .char-card:focus {
+        transform: scale(1.15); /* Card pops out */
+        border-color: #ff00ff;
+        box-shadow: 0 0 20px #00f3ff;
+        z-index: 10;
+        outline: none;
+    }
+
+/* --- Button Styling & Visual Feedback State --- */
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #00f3ff;
+    border: 3px solid #00f3ff;
+    padding: 15px 30px;
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+    /* Button hover stuff */
+    .btn:hover, .btn:focus {
+        background-color: #00f3ff;
+        color: #00122a; /* Inverts text color */
+        box-shadow: 0 0 20px #00f3ff;
+        outline: none;
+    }
+
+/*footer stuff */
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer a {
+    color: #00f3ff;
+}
+
+    footer a:hover {
+        color: #ff00ff;
+    }
+
+/* layout change for mobile devices */
+@media (max-width: 768px) {
+
+    /* chnage the navigation to be vertical instead of horizontal */
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* scale down cards slightly */
+    .char-card {
+        width: 130px;
+        height: 200px;
+    }
+
+        /* sprite zoom scales down */
+        .char-card img {
+            transform: scale(1.8);
+        }
+}
